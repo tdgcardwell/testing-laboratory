@@ -8,6 +8,10 @@ img {
   width: 100%;
 }
 
+/* fix for products with less than a full line of text. Without this they display too small. */
+.product {
+  width: 100%;
+}
 
 /* ====== bit of styling ====== */
 
