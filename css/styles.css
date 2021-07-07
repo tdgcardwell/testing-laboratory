@@ -1,3 +1,82 @@
+/* ====== basics ====== */
 * {
   box-sizing: border-box;
+}
+
+/* full width responsive images */
+img {
+  width: 100%;
+}
+
+
+/* ====== bit of styling ====== */
+
+h1 {
+  text-align: center;
+}
+
+.card {
+  text-align: center;
+  padding: 1rem;
+
+}
+
+.btn {
+  text-decoration: none;
+  display: inline-block;
+  max-width: 200px;
+  border: 3px solid black;
+  text-align: center;
+  padding: 5px;
+
+
+}
+
+
+/* ====== flexing etc ====== */
+
+.row {
+  display: flex;
+
+  /* will be rows on tablet and desktop */
+  flex-direction: column;
+}
+
+.card {
+  display: flex;
+
+  /* layout contents top to bottom */
+  flex-direction: column;
+
+  /* put all extra space in the middle - align first child to start (top) and last child to end (bottom) */
+  justify-content: space-between;
+
+  align-items: center;
+  width: 100%;
+}
+
+/* ====== media queries ====== */
+
+/* ============= Media Query One: 768px and wider ============= */
+@media (min-width:768px) {
+
+  .card {
+      width: 50%;
+  }
+
+  .row {
+    /* left to right again */
+    flex-direction: row;
+
+    flex-wrap: wrap;
+  }
+}
+
+/* ============= Media Query Two: 1024px and wider ============= */
+@media (min-width:1024px) {
+
+  .card {
+      width: 25%;
+  }
+
 }
