@@ -1,1 +1,84 @@
-*{box-sizing:border-box}img{width:100%}.product{width:100%}h1{text-align:center}.card{text-align:center;padding:1rem}.btn{text-decoration:none;display:inline-block;max-width:200px;border:3px solid black;text-align:center;padding:5px}.row{display:flex;flex-direction:column}@media (min-width: 768px){.row{flex-direction:row;flex-wrap:wrap}}.card{display:flex;flex-direction:column;justify-content:space-between;align-items:center;width:100%}@media (min-width: 768px){.card{width:50%}}@media (min-width: 1024px){.card{width:25%}}
+/* ====== basics ====== */
+/* line 26, ../../../../../Users/thomascardwell/Main Folder/WEBSITE/Testing/testing-laboratory/scss/styles.scss */
+* {
+  box-sizing: border-box;
+}
+
+/* full width responsive images */
+/* line 31, ../../../../../Users/thomascardwell/Main Folder/WEBSITE/Testing/testing-laboratory/scss/styles.scss */
+img {
+  width: 100%;
+}
+
+/* fix for products with less than a full line of text. Without this they display too small. */
+/* line 36, ../../../../../Users/thomascardwell/Main Folder/WEBSITE/Testing/testing-laboratory/scss/styles.scss */
+.product {
+  width: 100%;
+}
+
+/* ====== bit of styling ====== */
+/* line 42, ../../../../../Users/thomascardwell/Main Folder/WEBSITE/Testing/testing-laboratory/scss/styles.scss */
+h1 {
+  text-align: center;
+}
+
+/* line 46, ../../../../../Users/thomascardwell/Main Folder/WEBSITE/Testing/testing-laboratory/scss/styles.scss */
+.card {
+  text-align: center;
+  padding: 1rem;
+}
+
+/* line 52, ../../../../../Users/thomascardwell/Main Folder/WEBSITE/Testing/testing-laboratory/scss/styles.scss */
+.btn {
+  text-decoration: none;
+  display: inline-block;
+  max-width: 200px;
+  border: 3px solid black;
+  text-align: center;
+  padding: 5px;
+}
+
+/* ====== flexing etc ====== */
+/* line 66, ../../../../../Users/thomascardwell/Main Folder/WEBSITE/Testing/testing-laboratory/scss/styles.scss */
+.row {
+  display: flex;
+  /* columns on mobile */
+  flex-direction: column;
+}
+
+@media (min-width: 768px) {
+  /* line 66, ../../../../../Users/thomascardwell/Main Folder/WEBSITE/Testing/testing-laboratory/scss/styles.scss */
+  .row {
+    /* rows on tablet and desktop */
+    flex-direction: row;
+    /* wrap extra cards to new row */
+    flex-wrap: wrap;
+  }
+}
+
+/* line 82, ../../../../../Users/thomascardwell/Main Folder/WEBSITE/Testing/testing-laboratory/scss/styles.scss */
+.card {
+  display: flex;
+  /* layout contents top to bottom */
+  flex-direction: column;
+  /* put all extra space in the middle - align first child to start (top) and last child to end (bottom) */
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+
+@media (min-width: 768px) {
+  /* line 82, ../../../../../Users/thomascardwell/Main Folder/WEBSITE/Testing/testing-laboratory/scss/styles.scss */
+  .card {
+    width: 50%;
+  }
+}
+
+@media (min-width: 1024px) {
+  /* line 82, ../../../../../Users/thomascardwell/Main Folder/WEBSITE/Testing/testing-laboratory/scss/styles.scss */
+  .card {
+    width: 25%;
+  }
+}
+
+/*# sourceMappingURL=styles.css.map */
