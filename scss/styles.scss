@@ -1,3 +1,27 @@
+// ==================================
+// mixins
+// ==================================
+
+@mixin txt-ctr {
+  text-align: center;
+}
+
+@mixin full-wth {
+  width: 100%;
+}
+
+
+// ==================================
+// variables
+// ==================================
+
+// 768px and wider
+$med : 768px;
+
+// 1024px and wider
+$big : 1024px;
+
+
 /* ====== basics ====== */
 * {
   box-sizing: border-box;
@@ -5,22 +29,22 @@
 
 /* full width responsive images */
 img {
-  width: 100%;
+  @include full-wth;
 }
 
 /* fix for products with less than a full line of text. Without this they display too small. */
 .product {
-  width: 100%;
+  @include full-wth;
 }
 
 /* ====== bit of styling ====== */
 
 h1 {
-  text-align: center;
+  @include txt-ctr;
 }
 
 .card {
-  text-align: center;
+  @include txt-ctr;
   padding: 1rem;
 
 }
@@ -30,7 +54,7 @@ h1 {
   display: inline-block;
   max-width: 200px;
   border: 3px solid black;
-  text-align: center;
+  @include txt-ctr;
   padding: 5px;
 
 
@@ -42,8 +66,17 @@ h1 {
 .row {
   display: flex;
 
-  /* will be rows on tablet and desktop */
+  /* columns on mobile */
   flex-direction: column;
+
+  @media (min-width:$med) {
+
+    /* rows on tablet and desktop */
+    flex-direction: row;
+
+    /* wrap extra cards to new row */
+    flex-wrap: wrap;
+  }
 }
 
 .card {
@@ -56,31 +89,18 @@ h1 {
   justify-content: space-between;
 
   align-items: center;
-  width: 100%;
-}
 
-/* ====== media queries ====== */
+  // 1 per row at sml width.
+  @include full-wth;
 
-/* ============= Media Query One: 768px and wider ============= */
-@media (min-width:768px) {
+  // 2 per row at med width.
+  @media (min-width:$med) {
+        width: 50%;
+    }
 
-  .card {
-      width: 50%;
-  }
-
-  .row {
-    /* left to right again */
-    flex-direction: row;
-
-    flex-wrap: wrap;
-  }
-}
-
-/* ============= Media Query Two: 1024px and wider ============= */
-@media (min-width:1024px) {
-
-  .card {
-      width: 25%;
-  }
+  // 4 per row at big width.
+  @media (min-width:$big) {
+        width: 25%;
+    }
 
 }
